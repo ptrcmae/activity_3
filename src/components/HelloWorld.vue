@@ -20,12 +20,14 @@
             <thead>
               <tr>
                 <th>Product</th>
+                <th>Price</th>
                 <th>Qty.</th>
                 <th></th>
               </tr>
             </thead>
             <tr v-for="(item, index) in cart" :key="item.product.id">
               <td>{{ item.product.name }}</td>
+              <td> ₱{{ item.product.price }}</td>
               <td><input type="number" min="1" v-model="item.quantity" @change="updateQuantity(index)"/></td>
               <td><button class="button button2" @click="removeFromCart(index)">Remove</button></td>
             </tr>
